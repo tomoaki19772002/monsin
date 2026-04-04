@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8f7f4;
+  --foreground: #1a1a2e;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Noto Sans JP', system-ui, sans-serif;
+}
+
+@layer utilities {
+  .task-enter {
+    animation: taskEnter 0.25s ease-out forwards;
+  }
+
+  .task-done {
+    animation: taskDone 0.2s ease-in forwards;
+  }
+}
+
+@keyframes taskEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
